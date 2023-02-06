@@ -5,15 +5,15 @@ services:
     depends_on: 
       - redis
     ports:
-      - 8000:8000
+      - "${PORT}:${PORT}"
     environment:
-      - ENVIRONMENT=PROD
+      - ENVIRONMENT=DEV
       - HOST=localhost
-      - PORT=8000
-      - REDIS_HOST=localhost
+      - PORT=${PORT}
+      - REDIS_HOST=${REDIS_HOST}
       - REDIS_PORT=6379
       - REDIS_DB=0
   redis:
-    image: redis:5.0
+    image: redis
     ports:
-    - "6379:6379"
+    - "${REDIS_PORT}:6379"
