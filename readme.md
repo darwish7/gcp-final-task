@@ -19,3 +19,19 @@ docker pull redis
 docker tag redis gcr.io/zoz-project-375711/redis-gcr
 docker push gcr.io/zoz-project-375711/redis-gcr
 ```
+### 3) Running the kubernetes files form the private-management-vm
+we run the files in the kubernetes-yml-files dir
+
+1.to access using the **load balancer**
+```bash
+kubectl apply -f redis-deployment.yml
+kubectl apply -f redis-srvc.yml
+kubectl apply -f python-app.yml
+kubectl apply -f loadBanlancer.yml
+```
+2.to access using **ingress**
+```bash
+kubectl delete service loadbalancer
+kubectl apply -f nodePort.yml 
+kubectl apply -f ingress.yml
+```     
