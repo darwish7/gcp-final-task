@@ -1,11 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: loadbalancer
+  name: redis
 spec:
   selector:
-    name: my-app
+    app: redis
   ports:
-  - port: 80
-    targetPort: 8000
-  type: LoadBalancer
+  - port: 6379
+    targetPort: 6379

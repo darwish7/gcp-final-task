@@ -17,4 +17,3 @@ spec:
         image: gcr.io/zoz-project-375711/redis-gcr:latest
         ports:
         - containerPort: 6379
-~                             

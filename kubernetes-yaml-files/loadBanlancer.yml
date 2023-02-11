@@ -4,7 +4,7 @@ metadata:
   name: loadbalancer
 spec:
   selector:
-    name: my-app
+    name: python-app
   ports:
   - port: 80
     targetPort: 8000
